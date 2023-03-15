@@ -77,7 +77,16 @@ def filter_data():
 
 
 
-
+@app.route('/macros')
+def jinja_macros():
+    movies_dict ={
+        'Autoppsy of jane doe': 02.20,
+        'matrix':2.40,
+        'ghost in a shell':1.90,
+        'jon wick':2.51,
+        'batman':3.40}
+      
+    return render_template('using_macros.html' , movies=movies_dict)
 
 if __name__ == '__main__':
     app.run(debug=True)
