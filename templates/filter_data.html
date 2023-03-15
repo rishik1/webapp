@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<htm lang="en">
+
+    <heaad>
+        <meta charset=""UTF-8">
+        <title> Data Filters</title>
+    </heaad>
+
+    <body>
+        <h2> working with jinja2 filters</h2>
+
+        {% for movie, duration in movies| dictsort(false, 'value') %}
+            <ul>
+                <li>{{ movie|title }} : {{ duration|round(1) }}</li>
+            </ul>
+        {% endfor %}
+
+        <hr>
+        <ol>
+            <li> default value      :{{name | default('value not defined', true) }} </li><hr>
+            <li> capital case       :{{file| capitalize}}</li><br><hr>
+            <li> length             :{{movies|length}} item in the dictionary   </li><hr>
+            <li> First_item         :{{movies|first}}</li><hr>
+            <li> make a list        : {film | list}}</li><hr>
+
+        </ol>
+
+    </body>
